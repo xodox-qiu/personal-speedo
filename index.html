@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedometer</title>
+    <link rel="stylesheet" href="speedo.css">
+</head>
+<body>
+    <div class="speedometer">
+        <section class="dial-speedo">   
+            <svg class="rpm-arc" viewBox="0 0 200 200">
+                <path id="rpmPath" d="" stroke="#dbdbdb" stroke-width="25" fill="none" stroke-linecap="butt"/>
+                <path id="rpmRedline" d="" stroke="red" stroke-opacity="0.55" stroke-width="25" fill="none" stroke-linecap="butt"/>
+                <path id="rpmTip" d="" stroke="red" stroke-width="30" fill="none" stroke-linecap="square"/>
+            </svg>
+            <div class="ticks"></div>
+            <div class="circular-number"></div>
+            <div class="inside-dial"></div>
+            <div class="speed-display" id="speedValue"></div>
+            <div class="speed-perhour">MPH</div>
+            <div class="gear-display" id="gearValue"></div>
+            <div class="rpm-display">x1000 RPM</div>
+        </section>
+        <section>
+            <div class="engine-button-container">
+                <div class="engine-button" id="engineButton">
+                    <div class="engine-indicator" id="engineIndicator"></div>
+                </div>
+            </div>
+            <img class="fuel-icon" src="img/fuel-icon.png" alt="fuel Status">
+            <img class="engine-icon" src="img/body-icon.png" alt="Engine Status">
+            <img class="headlight-icon" id="headlights" src="img/headlight-off.png" alt="Headlight" />
+            <img class="seatbelt-icon" id="seatbelts" src="img/seatbelt-off.png" alt="Seatbelt Status">
+            <div id="indicator">
+                <img class="leftsignal-icon" id="leftIndicator" src="img/leftsignal-off.png" alt="Left Signal Status">
+                <img class="rightsignal-icon" id="rightIndicator" src="img/rightsignal-off.png" alt="Right Signal Status">
+            </div>
+        </section>
+        <section class="health">
+        <svg viewBox="0 0 200 200" class="arc-svg-engine">
+            <path id="engineHealthBg" class="arc-bg" />
+            <path id="engine" class="arc engine" />
+        </svg>
+        <svg viewBox="0 0 200 200" class="arc-svg-body">
+            <path id="fuelHealthBg" class="arc-bg" />
+            <path id="fuel" class="arc fuel" />
+        </svg>
+        </section>
+    </div>
+    <script src="speedo.js"></script>
+</body>
+</html>

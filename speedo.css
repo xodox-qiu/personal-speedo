@@ -1,0 +1,306 @@
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background: black; */
+  background: transparent !important;
+}
+
+.speedometer {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it's on top */
+  user-select: none;
+}
+
+.dial-speedo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128, 128, 128, 0.829) 5%, rgba(51, 51, 51, 0.8) 90%);
+  position: absolute;
+  border: 5px solid rgb(75, 75, 75); /* transparent border */
+}
+
+.seatbelt-icon {
+  position: absolute;
+  right: 70px;
+  bottom: 13px;
+  width: 30px;
+  height: 30px;
+  rotate: 20deg;
+  z-index: 6;
+  transition: filter 0.3s ease;
+}
+
+.fuel-icon {
+  position: absolute;
+  right: 80px;
+  top: 142px;
+  width: 15px;
+  height: 15px;
+  z-index: 6;
+}
+
+.engine-icon {
+  position: absolute;
+  left: 90px;
+  bottom: 140px;
+  width: 20px;
+  height: 20px;
+  z-index: 6;
+}
+
+.headlight-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 75px;
+  width: 24px;
+  height: 18px;
+  z-index: 7;
+  opacity: 0.75;
+}
+
+.speed-display {
+  position: absolute;
+  bottom: 180px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 5;
+}
+
+.speed-perhour {
+  position: absolute;
+  bottom: 145px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 5;
+  transform: scaleY(1.2); /* 1.0 is normal, 1.2 is 20% taller */
+  letter-spacing: -1px;
+}
+
+.gear-display {
+  position: absolute;
+  bottom: 103px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-style: italic;
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 5;
+}
+
+.rpm-display {
+  position: absolute;
+  left: 30px;
+  bottom: 70px;
+  width: 80%;
+  text-align: center;
+  font-size: 9px;
+  color: #dbdbdb;
+  font-family: "Bebas Neue", sans-serif;
+  z-index: 5;
+}
+
+.inside-dial {
+  border: 25px solid rgba(48, 48, 48, 0.582); /* transparent border */
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, rgba(145, 145, 145, 0.253) 60%, rgba(53, 53, 53, 0.445) 100%);  top: calc(15% - 10px);
+  left: calc(15% - 10px);
+  z-index: 4;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  font-size: 16px;
+  color: white;
+  font-family: monospace;
+}
+
+.rpm-arc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transform: rotate(-180deg);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.health {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+#rpmTip {
+  stroke: red;
+  stroke-width: 27;
+  stroke-linecap: butt;
+  filter: drop-shadow(0 0 1.5px red);
+}
+
+.tick {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 111px;
+  left: 49.3%;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-top: 39px solid rgb(70, 70, 70); /* color of the triangle */
+  transform-origin: bottom center;
+  rotate: -45deg;
+  z-index: 4;
+}
+
+.circular-number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.number {
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  font-family: "Bebas Neue", sans-serif;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+.health {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.arc-svg-engine {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 80px;
+  left: 70px;
+  rotate: 32deg;
+  stroke-linecap: round;
+  opacity: 0.95;
+}
+
+.arc-svg-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 80px;
+  left: 90px;
+  rotate: -103deg;
+  stroke-linecap: round;
+  opacity: 0.95;
+}
+
+.arc-bg {
+  fill: none;
+  stroke: #363636;
+  stroke-width: 13;
+  stroke-linecap: round;
+}
+
+.arc {
+  fill: none;
+  stroke-width: 10;
+}
+
+.arc.engine {
+  stroke: #ff0000de;
+}
+
+.arc.fuel {
+  stroke: #0fb3ff;
+}
+
+#indicator img {
+  width: 25px;
+  height: 30px;
+  opacity: 0.75;
+}
+
+.rightsignal-icon{
+  position: absolute;
+  z-index: 6;
+  right: 100px;
+  bottom: 67.5px;
+}
+
+.leftsignal-icon {
+  position: absolute; 
+  z-index: 6;
+  left: 111px;
+  bottom: 75px;
+}
+
+.engine-button-container {
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.engine-button {
+  width: 50px;
+  height: 50px;
+  background: #424242;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.engine-button.pressed {
+  background: #424242;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+  transform: translateY(2px);
+}
+
+.engine-indicator {
+  top: 20px;
+  width: 20px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: red;
+  transition: background-color 0.3s ease;
+}
+
+/* .new {
+  color: #dbdbdb;
+} */
