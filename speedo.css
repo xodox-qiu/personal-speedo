@@ -321,7 +321,7 @@ body {
   position: relative;
   background: radial-gradient(circle at 30% 30%, #5e5e5e, #2c2c2c);
   border-radius: 50%;
-  border: 5px solid #535353de;
+  border: 5px solid #202020ad;
   display: flex;
   align-items: center;
   justify-content: center;
