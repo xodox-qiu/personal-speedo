@@ -24,7 +24,7 @@ body {
 .watermark {
   position: absolute;
   z-index: 0;
-  left: 62.5px;
+  left: 62.7px;
   bottom: 52px;
   opacity: 1;
 }
@@ -40,16 +40,16 @@ body {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(128, 128, 128, 0.829) 5%, rgba(51, 51, 51, 0.8) 90%);
   position: absolute;
-  border: 5px solid rgb(75, 75, 75); /* transparent border */
+  border: 6px solid rgb(75, 75, 75); /* transparent border */
 }
 
 .seatbelt-icon {
   position: absolute;
   right: 60px;
-  bottom: 17px;
-  width: 35px;
+  bottom: 15px;
+  width: 40px;
   height: 30px;
-  rotate: 15deg;
+  rotate: 5deg;
   z-index: 6;
   transition: filter 0.3s ease;
 }
@@ -65,10 +65,10 @@ body {
 
 .engine-icon {
   position: absolute;
-  left: 90px;
-  bottom: 140px;
+  left: 94px;
+  bottom: 143px;
   width: 20px;
-  height: 20px;
+  height: 15px;
   z-index: 6;
 }
 
@@ -120,11 +120,12 @@ body {
 
 .rpm-display {
   position: absolute;
-  left: 30px;
-  bottom: 70px;
+  left: 31px;
+  bottom: 78px;
   width: 80%;
   text-align: center;
-  font-size: 9px;
+  font-style: bolder;
+  font-size: 25px;
   color: #dbdbdb;
   font-family: "Bebas Neue", sans-serif;
   z-index: 5;
@@ -170,10 +171,14 @@ body {
 }
 
 #rpmTip {
-  stroke: red;
-  stroke-width: 27;
+  stroke: none;
+  fill: red;
   stroke-linecap: butt;
   filter: drop-shadow(0 0 1.2px red);
+}
+
+.tip {
+  z-index: 9;
 }
 
 .tick {
@@ -222,7 +227,7 @@ body {
   width: 100%;
   height: 100%;
   top: 80px;
-  left: 70px;
+  left: 73px;
   rotate: 32deg;
   stroke-linecap: butt;
   opacity: 0.95;
@@ -233,7 +238,7 @@ body {
   width: 100%;
   height: 100%;
   top: 80px;
-  left: 90px;
+  left: 88px;
   rotate: -103deg;
   stroke-linecap: butt;
   opacity: 0.95;
@@ -304,8 +309,8 @@ body {
 
 .engine-button-container {
   position: absolute;
-  bottom: -14px;
-  right: -14px;
+  bottom: -15px;
+  right: -16px;
   z-index: 10;
   pointer-events: none;
 }

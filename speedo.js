@@ -78,11 +78,41 @@ function setRPM(targetRPM) {
         const arcPath = describeArc(centerX, centerY, radius, minAngle, angle);
         elements.rpmPath.setAttribute("d", arcPath);
 
-        const tipLength = 2.5;
-        const tipStart = angle - tipLength;
-        const tipEnd = angle;
-        const tipPath = describeArc(centerX, centerY, radius, tipStart, tipEnd);
-        elements.rpmTip.setAttribute("d", tipPath);
+        const tipAngle = angle;
+        const triangleBaseWidth = 4;
+        const triangleHeight = 15;
+
+        const rad = (tipAngle - 90) * Math.PI / 180;
+        const tipX = centerX + radius * Math.cos(rad);
+        const tipY = centerY + radius * Math.sin(rad);
+
+        // Base left and right points
+        const leftAngle = tipAngle - 90;
+        const rightAngle = tipAngle + 90;
+        const leftRad = (leftAngle - 90) * Math.PI / 180;
+        const rightRad = (rightAngle - 90) * Math.PI / 180;
+
+        const baseInset = 12; // adjust this number to control how much closer
+
+        const baseLeftX = tipX + (triangleBaseWidth / 2) * Math.cos(leftRad) - baseInset * Math.cos(rad);
+        const baseLeftY = tipY + (triangleBaseWidth / 2) * Math.sin(leftRad) - baseInset * Math.sin(rad);
+
+        const baseRightX = tipX + (triangleBaseWidth / 2) * Math.cos(rightRad) - baseInset * Math.cos(rad);
+        const baseRightY = tipY + (triangleBaseWidth / 2) * Math.sin(rightRad) - baseInset * Math.sin(rad);
+
+        // Tip point (further out)
+        const tipOutX = centerX + (radius + triangleHeight) * Math.cos(rad);
+        const tipOutY = centerY + (radius + triangleHeight) * Math.sin(rad);
+
+        // Draw triangle path
+        const trianglePath = `
+        M ${baseLeftX} ${baseLeftY}
+        L ${baseRightX} ${baseRightY}
+        L ${tipOutX} ${tipOutY}
+        Z
+        `;
+
+        elements.rpmTip.setAttribute("d", trianglePath);
 
         if (Math.abs(diff) >= 0.001) {
             rpmAnimationFrame = requestAnimationFrame(animate);
