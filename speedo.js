@@ -279,32 +279,32 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("fuelHealthBg").setAttribute("d", fuelBgPath);
         document.getElementById("engineHealthBg").setAttribute("d", engineBgPath);
     
-    setInterval(() => {
-        try {
-            const randomSpeed = Math.random() * 50;
-            const randomGear = Math.floor(Math.random() * 7);
-            const randomRPM = Math.random();
-            const engineOn = Math.random() > 0.5;
-            const randomState = Math.floor(Math.random() * 3);
-            const randomEngine = Math.random();
-            const randomfuel = Math.random();
-            const randomleft = Math.random() > 0.5;
-            const randomright = Math.random() > 0.5;
-            const randomseat = Math.random() > 0.5;
+    // setInterval(() => {
+    //     try {
+    //         const randomSpeed = Math.random() * 50;
+    //         const randomGear = Math.floor(Math.random() * 7);
+    //         const randomRPM = Math.random();
+    //         const engineOn = Math.random() > 0.5;
+    //         const randomState = Math.floor(Math.random() * 3);
+    //         const randomEngine = Math.random();
+    //         const randomfuel = Math.random();
+    //         const randomleft = Math.random() > 0.5;
+    //         const randomright = Math.random() > 0.5;
+    //         const randomseat = Math.random() > 0.5;
 
-            setSeatbelts(randomseat);
-            setLeftIndicator(randomleft); // blinking ON
-            setRightIndicator(randomright); // blinking ON
-            setEngineHealth(1);
-            setfuelHealth(1);
-            setSpeed(randomSpeed);
-            setGear(randomGear);
-            setRPM(randomRPM);
-            setEngine(engineOn);
-            setHeadlights(randomState);
-        } catch (e) {
-            console.error("Update loop failed:", e);
-        }
-    }, 1000);
+    //         setSeatbelts(randomseat);
+    //         setLeftIndicator(randomleft); // blinking ON
+    //         setRightIndicator(randomright); // blinking ON
+    //         setEngineHealth(1);
+    //         setfuelHealth(1);
+    //         setSpeed(randomSpeed);
+    //         setGear(randomGear);
+    //         setRPM(randomRPM);
+    //         setEngine(engineOn);
+    //         setHeadlights(randomState);
+    //     } catch (e) {
+    //         console.error("Update loop failed:", e);
+    //     }
+    // }, 1000);
 });
 
