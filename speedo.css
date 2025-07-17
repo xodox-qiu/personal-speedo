@@ -38,9 +38,9 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(128, 128, 128, 0.829) 5%, rgba(51, 51, 51, 0.8) 90%);
+  background: radial-gradient(circle, rgba(168, 168, 168, 0.829) 5%, rgba(51, 51, 51, 0.8) 90%);
   position: absolute;
-  border: 6px solid rgb(75, 75, 75); /* transparent border */
+  border: 6px solid rgb(48, 48, 48); /* transparent border */
 }
 
 .seatbelt-icon {
@@ -132,7 +132,7 @@ body {
 }
 
 .inside-dial {
-  border: 25px solid rgba(66, 66, 66, 0.795); /* transparent border */
+  border: 25px solid rgba(53, 53, 53, 0.795); /* transparent border */
   width: 60%;
   height: 60%;
   border-radius: 50%;
@@ -190,7 +190,7 @@ body {
   filter: drop-shadow(0 0 0.7px black);
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-top: 42px solid rgb(70, 70, 70); /* color of the triangle */
+  border-top: 42px solid rgb(43, 43, 43); /* color of the triangle */
   transform-origin: bottom center;
   rotate: -45deg;
   z-index: 4;
