@@ -10,15 +10,21 @@ let indicators = 0, headlightState = 0, seatbeltState = 0;
 function setEngine(state) {
     const button = document.getElementById('engineButton');
     const indicator = document.getElementById('engineIndicator');
+    const label = document.getElementById('engineLabel');
 
     if (state) {
-        button.classList.add('pressed');
+        button.classList.add('pressed', 'on');
         indicator.style.backgroundColor = 'limegreen';
+        indicator.style.boxShadow = '0 0 6px rgba(0,255,0,0.8)';
+        label.textContent = 'STOP';
     } else {
-        button.classList.remove('pressed');
+        button.classList.remove('pressed', 'on');
         indicator.style.backgroundColor = 'red';
+        indicator.style.boxShadow = '0 0 6px rgba(255,0,0,0.8)';
+        label.textContent = 'START';
     }
 }
+
 
 function setHeadlights(state) {
     const indicator = document.getElementById('headlights');
@@ -57,7 +63,7 @@ function setRPM(targetRPM) {
     const radius = 87.5;
     const minAngle = 0;
     const maxAngle = 270;
-    const speed = 0.15;
+    const speed = 0.20;
 
     function animate() {
         const diff = targetRPM - currentRPM;
@@ -144,8 +150,8 @@ function setEngineHealth(percent) {
     const centerY = 100;
     const radius = 90;
 
-    const startAngle = 200;
-    const sweepAngle = 80;
+    const startAngle = 201;
+    const sweepAngle = 78;
     const endAngle = startAngle + (sweepAngle * percent);
 
     const arc = describeArc(centerX, centerY, radius, startAngle, endAngle);
@@ -157,8 +163,8 @@ function setfuelHealth(percent) {
     const centerY = 100;
     const radius = 90;
 
-    const startAngle = 150;
-    const sweepAngle = 80;
+    const startAngle = 151;
+    const sweepAngle = 78;
     const endAngle = startAngle + (sweepAngle * percent);
 
     const arc = describeArc(centerX, centerY, radius, startAngle, endAngle);
@@ -193,7 +199,7 @@ function createTicks() {
         const tick = document.createElement('div');
         tick.className = 'tick';
         const angle = (i / (tickCount - 1)) * 270 - 135;
-        tick.style.transform = `rotate(${angle}deg) translateY(-115px)`;
+        tick.style.transform = `rotate(${angle}deg) translateY(-110px)`;
         ticksContainer.appendChild(tick);
     }
 }
@@ -273,32 +279,32 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("fuelHealthBg").setAttribute("d", fuelBgPath);
         document.getElementById("engineHealthBg").setAttribute("d", engineBgPath);
     
-    // setInterval(() => {
-    //     try {
-    //         const randomSpeed = Math.random() * 50;
-    //         const randomGear = Math.floor(Math.random() * 7);
-    //         const randomRPM = Math.random();
-    //         const engineOn = Math.random() > 0.5;
-    //         const randomState = Math.floor(Math.random() * 3);
-    //         const randomEngine = Math.random();
-    //         const randomfuel = Math.random();
-    //         const randomleft = Math.random() > 0.5;
-    //         const randomright = Math.random() > 0.5;
-    //         const randomseat = Math.random() > 0.5;
+    setInterval(() => {
+        try {
+            const randomSpeed = Math.random() * 50;
+            const randomGear = Math.floor(Math.random() * 7);
+            const randomRPM = Math.random();
+            const engineOn = Math.random() > 0.5;
+            const randomState = Math.floor(Math.random() * 3);
+            const randomEngine = Math.random();
+            const randomfuel = Math.random();
+            const randomleft = Math.random() > 0.5;
+            const randomright = Math.random() > 0.5;
+            const randomseat = Math.random() > 0.5;
 
-    //         setSeatbelts(randomseat);
-    //         setLeftIndicator(randomleft); // blinking ON
-    //         setRightIndicator(randomright); // blinking ON
-    //         setEngineHealth(1);
-    //         setfuelHealth(1);
-    //         setSpeed(randomSpeed);
-    //         setGear(randomGear);
-    //         setRPM(randomRPM);
-    //         setEngine(engineOn);
-    //         setHeadlights(randomState);
-    //     } catch (e) {
-    //         console.error("Update loop failed:", e);
-    //     }
-    // }, 1000);
+            setSeatbelts(randomseat);
+            setLeftIndicator(randomleft); // blinking ON
+            setRightIndicator(randomright); // blinking ON
+            setEngineHealth(1);
+            setfuelHealth(1);
+            setSpeed(randomSpeed);
+            setGear(randomGear);
+            setRPM(randomRPM);
+            setEngine(engineOn);
+            setHeadlights(randomState);
+        } catch (e) {
+            console.error("Update loop failed:", e);
+        }
+    }, 1000);
 });
 
