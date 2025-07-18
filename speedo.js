@@ -26,7 +26,6 @@ function setEngine(state) {
     }
 }
 
-
 function setHeadlights(state) {
     const indicator = document.getElementById('headlights');
     headlightState = state;
@@ -326,8 +325,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //         setSeatbelts(randomseat);
     //         setLeftIndicator(randomleft); // blinking ON
     //         setRightIndicator(randomright); // blinking ON
-    //         setEngineHealth(1);
-    //         setfuelHealth(1);
+    //         setEngineHealth(0.5);
+    //         setfuelHealth(0.5);
     //         setSpeed(randomSpeed);
     //         setGear(randomGear);
     //         setRPM(randomRPM);
