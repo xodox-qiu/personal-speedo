@@ -10,18 +10,19 @@ let indicators = 0, headlightState = 0, seatbeltState = 0;
 function setEngine(state) {
     const button = document.getElementById('engineButton');
     const indicator = document.getElementById('engineIndicator');
-    const label = document.getElementById('engineLabel');
 
     if (state) {
         button.classList.add('pressed', 'on');
-        indicator.style.backgroundColor = 'limegreen';
+        const green = 'limegreen';
+        indicator.style.backgroundColor = green;
         indicator.style.boxShadow = '0 0 6px rgba(0,255,0,0.8)';
-        label.textContent = 'STOP';
+        button.style.borderColor = green;
     } else {
         button.classList.remove('pressed', 'on');
-        indicator.style.backgroundColor = 'red';
+        const red = 'red';
+        indicator.style.backgroundColor = red;
         indicator.style.boxShadow = '0 0 6px rgba(255,0,0,0.8)';
-        label.textContent = 'START';
+        button.style.borderColor = red;
     }
 }
 
@@ -229,7 +230,7 @@ function createTicks() {
         const tick = document.createElement('div');
         tick.className = 'tick';
         const angle = (i / (tickCount - 1)) * 270 - 135;
-        tick.style.transform = `rotate(${angle}deg) translateY(-110px)`;
+        tick.style.transform = `rotate(${angle}deg) translateY(-115px)`;
         ticksContainer.appendChild(tick);
     }
 }
