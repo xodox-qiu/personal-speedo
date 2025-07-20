@@ -311,27 +311,27 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // setInterval(() => {
     //     try {
-    //         const randomSpeed = Math.random() * 50;
-    //         const randomGear = Math.floor(Math.random() * 7);
-    //         const randomRPM = Math.random();
+    //         // const randomSpeed = Math.random() * 50;
+    //         // const randomGear = Math.floor(Math.random() * 7);
+    //         // const randomRPM = Math.random();
     //         const engineOn = Math.random() > 0.5;
-    //         const randomState = Math.floor(Math.random() * 3);
-    //         const randomEngine = Math.random();
-    //         const randomfuel = Math.random();
-    //         const randomleft = Math.random() > 0.5;
-    //         const randomright = Math.random() > 0.5;
-    //         const randomseat = Math.random() > 0.5;
+    //         // const randomState = Math.floor(Math.random() * 3);
+    //         // const randomEngine = Math.random();
+    //         // const randomfuel = Math.random();
+    //         // const randomleft = Math.random() > 0.5;
+    //         // const randomright = Math.random() > 0.5;
+    //         // const randomseat = Math.random() > 0.5;
 
-    //         setSeatbelts(randomseat);
-    //         setLeftIndicator(randomleft); // blinking ON
-    //         setRightIndicator(randomright); // blinking ON
-    //         setEngineHealth(0.5);
-    //         setfuelHealth(0.5);
-    //         setSpeed(randomSpeed);
-    //         setGear(randomGear);
-    //         setRPM(randomRPM);
-    //         setEngine(engineOn);
-    //         setHeadlights(randomState);
+    //         // setSeatbelts(randomseat);
+    //         // setLeftIndicator(randomleft); // blinking ON
+    //         // setRightIndicator(randomright); // blinking ON
+    //         // setEngineHealth(0.5);
+    //         // setfuelHealth(0.5);
+    //         // setSpeed(randomSpeed);
+    //         // setGear(randomGear);
+    //         // setRPM(randomRPM);
+    //         setEngine(1);
+    //         // setHeadlights(randomState);
     //     } catch (e) {
     //         console.error("Update loop failed:", e);
     //     }
